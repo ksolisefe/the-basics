@@ -9,7 +9,7 @@
     @livewireStyles
 </head>
 <body>
-    <livewire:counter />
+    <livewire:todos />
     @livewireScripts
 </body>
 </html>
