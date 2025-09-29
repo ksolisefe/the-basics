@@ -1,7 +1,7 @@
-<div class="mx-30">
+<div>
     <h2>Posts:</h2>
 
-    <flux:table class="bg-gray-800">
+    <flux:table class="bg-gray-800 p-3">
         <flux:table.columns>
             <flux:table.column>Title</flux:table.column>
             <flux:table.column>Content</flux:table.column>
