@@ -13,5 +13,11 @@ class Post extends Model
     protected $fillable = [
         'title',
         'content',
+        'isArchived',
     ];
+
+    public function archive() {
+        $this->isArchived = true;
+        $this->save();
+    }
 }

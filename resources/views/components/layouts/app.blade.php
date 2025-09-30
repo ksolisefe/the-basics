@@ -17,12 +17,6 @@
                 <flux:navlist class="w-64">
                     <flux:navlist.item href="/" icon="home" @class(['current' => request()->is('/')])>Todos</flux:navlist.item>
                     <flux:navlist.item href="/counter" @class(['current' => request()->is('counter')])>Counter</flux:navlist.item>
-                    <flux:navlist.item href="/counter" @class(['current' => request()->is('counter')])>Counter</flux:navlist.item>
-                    <flux:navlist.item href="/counter" @class(['current' => request()->is('counter')])>Counter</flux:navlist.item>
-                    <flux:navlist.item href="/counter" @class(['current' => request()->is('counter')])>Counter</flux:navlist.item>
-                    <flux:navlist.item href="/counter" @class(['current' => request()->is('counter')])>Counter</flux:navlist.item>
-                    <flux:navlist.item href="/counter" @class(['current' => request()->is('counter')])>Counter</flux:navlist.item>
-                    <flux:navlist.item href="/counter" @class(['current' => request()->is('counter')])>Counter</flux:navlist.item>
                     <flux:navlist.item href="/posts" @class(['current' => request()->is('posts')])>Posts</flux:navlist.item>
                     <flux:navlist.item href="/posts/create" @class(['current' => request()->is('posts/create')])>Create Post</flux:navlist.item>
                 </flux:navlist>

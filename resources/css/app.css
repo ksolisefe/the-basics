@@ -14,3 +14,7 @@
 .current {
     font-weight: bold;
 }
+
+.archived {
+    background: var(--color-slate-700);
+}
