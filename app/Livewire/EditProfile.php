@@ -2,30 +2,33 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Forms\ProfileForm;
 use App\Models\User;
+use Flux\Flux;
+use FluxPro\FluxPro;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
+use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class EditProfile extends Component
-{
-    public User $user;
+{    
+    public ProfileForm $form;
     
-    public $username = '';
-    public $bio = '';
-
+    public $showSuccessIndicator = false;
+    
     public function mount()
     {
-        $this->user = Auth::user();
-
-        $this->username = $this->user->username;
-        $this->bio = $this->user->bio;
+        $this->form->setUser(Auth::user());
     }
 
     public function save()
     {
-        $this->user->username = $this->username;
-        $this->user->bio = $this->bio;
-        $this->user->save();
+        $this->form->update();
+        
+        sleep(1);
+
+        $this->showSuccessIndicator = true;
     }
     
     public function render()
