@@ -17,10 +17,13 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
+            'username' => 'Test User',
             'email' => 'test@example.com',
-            'username' => 'test',
             'bio' => 'test bio',
+            'receive_emails' => true,
+            'receive_updates' => true,
+            'receive_offers' => true,
+            'country' => 'United States',
         ]);
 
         Post::factory(5)->create();

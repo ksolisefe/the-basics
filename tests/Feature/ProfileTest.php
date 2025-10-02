@@ -23,7 +23,7 @@ test('profile information can be updated', function () {
     $this->actingAs($user);
 
     $component = Volt::test('profile.update-profile-information-form')
-        ->set('name', 'Test User')
+        ->set('username', 'Test User')
         ->set('email', 'test@example.com')
         ->call('updateProfileInformation');
 

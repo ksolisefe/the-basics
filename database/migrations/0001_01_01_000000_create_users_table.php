@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string('bio')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->boolean('receive_emails')->default(true);
+            $table->boolean('receive_updates')->default(true);
+            $table->boolean('receive_offers')->default(true);
+            $table->string('country')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

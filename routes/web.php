@@ -10,8 +10,8 @@ use App\Livewire\EditProfile;
 Route::get('/', Todos::class);
 Route::get('/counter', Counter::class);
 Route::get('/posts', ShowPosts::class);
-Route::get('/posts/create', CreatePost::class);
-Route::get('/edit-profile', EditProfile::class);
+Route::get('/posts/create', CreatePost::class)->middleware('auth');
+Route::get('/edit-profile', EditProfile::class)->middleware('auth');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

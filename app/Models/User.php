@@ -12,6 +12,13 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+    protected $casts = [
+        'receive_emails' => 'boolean',
+        'receive_updates' => 'boolean',
+        'receive_offers' => 'boolean',
+        'country' => 'string',
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -23,6 +30,10 @@ class User extends Authenticatable
         'bio',
         'email',
         'password',
+        'receive_emails',
+        'receive_updates',
+        'receive_offers',
+        'country',
     ];
 
     /**
