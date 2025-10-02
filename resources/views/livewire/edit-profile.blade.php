@@ -3,7 +3,7 @@
 
     <form wire:submit="save" class="min-w-[30rem] flex flex-col gap-6 rounded-lg shadow p-6 bg-white/5">
         <label class="flex flex-col gap-2">
-            <h3 class="font-medium text-base">Username</h3>
+            <h3 class="font-medium text-base">Username <span class="text-red-500 opacity-75" aria-hidden="true">*</span></h3>
 
             <input
                 
@@ -32,6 +32,34 @@
                 rows="4"
                 class="px-3 py-2 border border-slate-300 rounded-lg text-black"
                 ></textarea>
+        </label>
+
+        <label class="flex flex-col gap-2">
+            <h3 class="font-medium text-base">Country <span class="text-red-500 opacity-75" aria-hidden="true">*</span></h3>
+
+            <select
+                
+                wire:model.live="form.country"
+                @class([
+                    'px-3 py-2 rounded-lg text-black',
+                    'border border-slate-300' => $errors->missing('form.country'),
+                    'border-3 border-red-300' => $errors->has('form.country'),
+                ])
+                @error('form.country')
+                    aria-invalid="true"
+                    aria-description="{{ $message }}"
+                @enderror
+            >
+                <option value="" selected disabled>Choose your country</option>
+                <option>United States</option>
+                <option>Canada</option>
+                <option>United Kingdom</option>
+                <option>Australia</option>
+                <option>India</option>
+            </select>
+            @error('form.country')
+                <p class="text-sm text-red-500" aria-live="assertive">{{ $message }}</p>            
+            @enderror
         </label>
 
         <fieldset class="flex flex-col gap-2">
