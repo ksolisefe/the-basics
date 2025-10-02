@@ -45,8 +45,35 @@
                     Yes
                 </label>
                 <label class="flex items-center gap-2">
-                    <input wire:mode.boolean="form.receive_emails" type="radio" name="receive_emails" value="false">
+                    <input wire:model.boolean="form.receive_emails" type="radio" name="receive_emails" value="false">
                     No
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset x-show="$wire.form.receive_emails" x-collapse class="flex flex-col gap-2">
+            <div>
+                <legend class="font-medium text-base">Email Type</legend>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label class="flex items-center gap-2">
+                    <input
+                        wire:model="form.receive_updates"
+                        type="checkbox"
+                        name="receive_updates"
+                        class="rounded"
+                    >
+                    General Updates
+                </label>
+                <label class="flex items-center gap-2">
+                    <input
+                        wire:model="form.receive_offers"
+                        type="checkbox"
+                        name="receive_offers"
+                        class="rounded"
+                    >
+                    Marketing offers
                 </label>
             </div>
         </fieldset>
