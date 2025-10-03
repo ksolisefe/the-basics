@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             'receive_emails' => true,
             'receive_updates' => true,
             'receive_offers' => true,
-            'country' => 'United States',
+            'country' => 'US',
         ]);
 
         Post::factory(5)->create();

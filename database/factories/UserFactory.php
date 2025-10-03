@@ -33,7 +33,7 @@ class UserFactory extends Factory
             'receive_emails' => fake()->boolean(),
             'receive_updates' => fake()->boolean(),
             'receive_offers' => fake()->boolean(),
-            'country' => fake()->country(),
+            'country' => fake()->countryCode(),
         ];
     }
 

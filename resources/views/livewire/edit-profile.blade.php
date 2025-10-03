@@ -51,11 +51,9 @@
                 @enderror
             >
                 <option value="" selected disabled>Choose your country</option>
-                <option>United States</option>
-                <option>Canada</option>
-                <option>United Kingdom</option>
-                <option>Australia</option>
-                <option>India</option>
+                @foreach (App\Enums\Country::cases() as $country)
+                    <option value="{{ $country->value }}">{{ $country->label() }}</option>
+                @endforeach
             </select>
             @error('form.country')
                 <p class="text-sm text-red-500" aria-live="assertive">{{ $message }}</p>            

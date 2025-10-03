@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Validation\Rule;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
+use App\Enums\Country;
 
 class ProfileForm extends Form
 {
@@ -14,7 +15,7 @@ class ProfileForm extends Form
     #[Validate]
     public $username = '';
     public $bio = '';
-    public $country = '';
+    public Country $country = Country::United_States;
     public $receive_emails = false;
     public $receive_updates = false;
     public $receive_offers = false;
