@@ -21,7 +21,7 @@
                     <flux:navlist.item wire:navigate href="/posts/create" @class(['current' => request()->is('posts/create')])>Create Post</flux:navlist.item>
                 </flux:navlist>
             </div>
-            <div class="p-3">
+            <div class="p-3 flex-1">
                 {{ $slot }}
             </div>
         </div>
